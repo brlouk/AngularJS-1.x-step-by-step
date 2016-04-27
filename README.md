@@ -17,9 +17,11 @@ In this first step, we use only elementary AngularJS concepts to render a dynami
 To Enable AngularJS on your HTML, as a minimum requirement,  you need to :
 
 1.  Add "ng-app" to your "html" element on the top of your html file.
-2.  Load AngularJS Script File on the "body" element (for performance concerns) : <script></script>
-
-
-
-
-
+```html
+<html ng-app> </html>
+```
+2.  Load AngularJS Script File on the "body" element (for performance concerns)
+```html
+<body> <script src="angular.js"></script></body>
+```
+### Step 2 : Module / Controller
