@@ -1,9 +1,14 @@
 <html ng-app="myapp">
 <body>
 	<!--  -->
-	<div id="scope" ng-controller="MyController">
-		<h2>AngularJS Data Binding - Scope (1)</h2>
-		<p>Where is my scope! {{hi}}</p>
+	<div id="scope1" ng-controller="MyController">
+		<h2>AngularJS Data Binding - Controller / Scope (1)</h2>
+		<p>My scope says hi :  {{hi}}</p>
+	</div>
+	
+	<div id="scope2" ng-controller="MyController2 as controller2">
+		<h2>AngularJS Data Binding - Controller As / Scope (2)</h2>
+		<p>My scope says hi :  {{controller2.hi}}</p>
 	</div>
 	
 	<!-- @Populate Script dependencies -->
