@@ -8,6 +8,7 @@ Live Demo, Coming Soon!
 # Steps
 
 ### Step 1 : Basics / Templates
+[Live Demo](http://s618867135.onlinehome.fr/AngularJS-1.x-step-by-step/step-1/frontend/src/app/)
 
 In this first step, we use only elementary AngularJS concepts to render a dynamic view in the browser.
 
@@ -31,6 +32,8 @@ To Enable AngularJS on your HTML, as a minimum requirement,  you need to :
 <body> <script src="angular.js"></script></body>
 ```
 ### Step 2 : Module / Controller / Scope
+[Live Demo](http://s618867135.onlinehome.fr/AngularJS-1.x-step-by-step/step-2/frontend/src/app/)
+
 In the second step, we initiate programatically the most used concepts of AngularJS.
 
 * Module — A module is a collection of services, directives, controllers, filters, and configuration information.
