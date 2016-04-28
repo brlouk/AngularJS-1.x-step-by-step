@@ -38,6 +38,22 @@ In the second step, we initiate programatically the most used concepts of Angula
 * Scope — Scope is an object that refers to the application model
 
 #### Get Started
+* Create a html file "index.html" and add ng-app directive with the name of the main module "myapp"
+```html
+<html ng-app="myapp"> </html>
+```
+* Create a js file "index.module.js" to define the main module "myapp"
+```javascript
+angular.module('myapp', []);
+```
+* Create a js file "index.controller.js" to define a simple controller within the module "myapp"
+```javascript
+angular.module('myapp').controller('MyController', MyController);
+
+	function MyController($scope) {
+		$scope.hi = "I'm here!";
+	}
+```
 
 
 
