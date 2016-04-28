@@ -74,3 +74,5 @@ function CustomerController() {
 	vm.name = "Bruce Wayne";
 }
 ```
+### Step 3 : Dependency Injection / Angular Services
+TODO
