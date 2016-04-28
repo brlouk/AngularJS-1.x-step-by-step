@@ -3,8 +3,6 @@ This Tutorial is designed for software developers who want to learn the basics o
 
 Each Step has its own folder so you can work on each step separately.
 
-Live Demo, Coming Soon!
-
 # Steps
 
 ### Step 1 : Basics / Templates
