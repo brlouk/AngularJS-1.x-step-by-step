@@ -36,6 +36,7 @@ In the second step, we initiate programatically the most used concepts of Angula
 * Module — A module is a collection of services, directives, controllers, filters, and configuration information.
 * Controller / Controller As — A Controller is defined by a JavaScript constructor function that is used to augment the Angular Scope.
 * Scope — Scope is an object that refers to the application model
+* Angular directives — ng-submit, ng-click, ng-repeat, select, ng-src, ng-model
 
 #### Get Started
 * Create a html file "index.html" and add ng-app directive with the name of the main module "myapp"
