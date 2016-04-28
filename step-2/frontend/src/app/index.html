@@ -1,19 +1,46 @@
 <html ng-app="myapp">
 <body>
 	<!--  -->
-	<div id="scope1" ng-controller="MyController">
+	<div ng-controller="MyController">
 		<h2>AngularJS Data Binding - Controller / Scope (1)</h2>
-		<p>My scope says hi :  {{hi}}</p>
+		<p>My scope says hi : {{hi}}</p>
 	</div>
-	
-	<div id="scope2" ng-controller="MyController2 as controller2">
+
+	<div ng-controller="ActorController1 as actor">
 		<h2>AngularJS Data Binding - Controller As / Scope (2)</h2>
-		<p>My scope says hi :  {{controller2.hi}}</p>
+		<p>Actor: {{actor.name}}</p>
 	</div>
-	
+
+	<div ng-controller="ActorController2 as actor">
+		<h2>AngularJS Click - ng-click Directive (1)</h2>
+		<button ng-click="actor.showActorName()">Show Actor Name</button>
+		{{actor.displayName}}
+	</div>
+
+	<div ng-controller="CustomerController as customer">
+		<h2>AngularJS Form - ng-submit Directive (2)</h2>
+		<form ng-submit="customer.submit()">
+			First Name : <input name="First Name" type="text"
+				ng-model="customer.firstname" required="required" /> Last Name : <input
+				name="Last Name" type="text" ng-model="customer.lastname"
+				required="required" />
+			<button type="submit">Submit</button>
+			<button ng-click="customer.reset()" type="reset">Reset</button>
+			<pre>{{customer.newcustomer}}</pre>
+		</form>
+	</div>
+
+	<div ng-controller="ActorController3 as actor">
+		<h2>AngularJS - ng-repeat Directive (3)</h2>
+		<ul>
+			<li ng-repeat="a in actor.list">{{a.firstname + " " +
+				a.lastname}}</li>
+		</ul>
+	</div>
+
 	<!-- @Populate Script dependencies -->
 	<script src="../../vendor_components/angular/1.5.5/angular.js"></script>
 	<script src="index.module.js"></script>
-	<script src="index.controller.js"></script>	
+	<script src="index.controller.js"></script>
 </body>
 </html>
