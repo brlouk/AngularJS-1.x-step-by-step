@@ -34,7 +34,7 @@ To Enable AngularJS on your HTML, as a minimum requirement,  you need to :
 In the second step, we initiate programatically the most used concepts of AngularJS.
 
 * Module — A module is a collection of services, directives, controllers, filters, and configuration information.
-* Controller — A Controller is defined by a JavaScript constructor function that is used to augment the Angular Scope.
+* Controller / Controller As — A Controller is defined by a JavaScript constructor function that is used to augment the Angular Scope.
 * Scope — Scope is an object that refers to the application model
 
 #### Get Started
