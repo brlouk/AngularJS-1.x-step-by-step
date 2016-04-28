@@ -57,10 +57,19 @@ function MyController($scope) {
 * Use the defined controller and its scope in html file
 ```html
 <div ng-controller="MyController">
-	<h2>AngularJS Data Binding - Controller / Scope (1)</h2>
 	<p>My scope says hi :  {{hi}}</p>
 </div>
 ```
-
-
-
+* It's recommanded to use "Controller As" with vm instead of controller
+```html
+<div ng-controller="CustomerController as customer">
+	<p>Customer :  {{customer.name}}</p>
+</div>
+```
+```javascript
+angular.module('myapp').controller('CustomerController', CustomerController);
+function CustomerController() {
+	var vm = this;
+	vm.name = "Bruce Wayne";
+}
+```
