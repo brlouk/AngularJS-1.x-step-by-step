@@ -1,5 +1,5 @@
 # AngularJS-1.x-step-by-step
-This Tutorial is designed for me as first audience and for software developers who want to learn the basics of AngularJS in simple and easy steps. In advanced steps, we use Bower, Gulp and NodeJS to simplify developement.
+This Tutorial is designed for software developers who want to learn the basics of AngularJS in simple and easy steps. In advanced steps, we use Bower, Gulp and NodeJS to simplify developement.
 
 # Steps
 
@@ -9,7 +9,7 @@ In this first step, we use only elementary AngularJS concepts to render a dynami
 
 * Auto Bootstrap — The ngApp directive designates the root element of the application.
 * Init Scope — The ngInit directive allows you to evaluate an expression in the current scope.   
-* Markup — The double curly brace notation {{ }} to bind expressions to elements is built-in Angular markup.
+* Markup — The double curly brace notation {{ }} to bind expressions to html elements.
 * Filter Number — using {{ | }} notation to format data for display
 
 #### Get Started
