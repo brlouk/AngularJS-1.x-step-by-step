@@ -42,17 +42,17 @@ In the second step, we initiate programatically the most used concepts of Angula
 ```html
 <html ng-app="myapp"> </html>
 ```
-* Create a js file "index.module.js" to define the main module "myapp"
+* Create a js file "index.module.js" to define the module
 ```javascript
 angular.module('myapp', []);
 ```
-* Create a js file "index.controller.js" to define a simple controller within the module "myapp"
+* Create a js file "index.controller.js" to define a simple controller within the module
 ```javascript
 angular.module('myapp').controller('MyController', MyController);
 
-	function MyController($scope) {
-		$scope.hi = "I'm here!";
-	}
+function MyController($scope) {
+	$scope.hi = "I'm here!";
+}
 ```
 
 
