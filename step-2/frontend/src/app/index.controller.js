@@ -7,16 +7,14 @@
 		$scope.hi = "Hi! My name is $scope!";
 	}
 
-	angular.module('myapp').controller('ActorController1',
-			ActorController1);
+	angular.module('myapp').controller('ActorController1', ActorController1);
 
 	function ActorController1() {
 		var vm = this;
 		vm.name = "Bruce Wayne";
 	}
 
-	angular.module('myapp').controller('ActorController2',
-			ActorController2);
+	angular.module('myapp').controller('ActorController2', ActorController2);
 
 	function ActorController2() {
 		var vm = this;
@@ -64,6 +62,19 @@
 		}, {
 			"firstname" : "Maggie",
 			"lastname" : "Grace"
+		} ];
+	}
+
+	angular.module('myapp').controller('ImageController', ImageController);
+
+	function ImageController() {
+		var vm = this;
+		vm.list = [ {
+			"name" : "AngularJS",
+			"url" : "https://angularjs.org/img/AngularJS-large.png"
+		}, {
+			"name" : "Angular Attack",
+			"url" : "https://angularjs.org/img/angularattack-logo.png"
 		} ];
 	}
 
