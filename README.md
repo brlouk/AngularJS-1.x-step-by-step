@@ -54,6 +54,13 @@ function MyController($scope) {
 	$scope.hi = "I'm here!";
 }
 ```
+* Use the defined controller and its scope in html file
+```html
+<div ng-controller="MyController">
+	<h2>AngularJS Data Binding - Controller / Scope (1)</h2>
+	<p>My scope says hi :  {{hi}}</p>
+</div>
+```
 
 
 
