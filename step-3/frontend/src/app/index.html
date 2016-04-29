@@ -1,0 +1,28 @@
+<html ng-app="myapp" ng-strict-di>
+<body>
+
+	<div ng-controller="ConstantController as constant">
+		<h2>AngularJS - Constant</h2>
+		API URL : {{constant.apiURL}}
+	</div>
+	
+	<div ng-controller="ValueController as value">
+		<h2>AngularJS - Value</h2>
+		These params are used for logging, take a look at console : {{value.console}}
+	</div>
+	
+	<div ng-controller="IPController as ip">
+		<h2>AngularJS - Service</h2>
+		{{ip.data}}
+	</div>
+
+	<!-- @Populate Script dependencies -->
+	<script src="../../vendor_components/angular/1.5.5/angular.js"></script>
+	<script src="index.module.js"></script>
+	<script src="index.value.js"></script>
+	<script src="index.constant.js"></script>
+	<script src="index.config.js"></script>
+	<script src="index.service.js"></script>
+	<script src="index.controller.js"></script>
+</body>
+</html>
