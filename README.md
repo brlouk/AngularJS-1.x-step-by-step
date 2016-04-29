@@ -32,7 +32,7 @@ To Enable AngularJS on your HTML, as a minimum requirement,  you need to :
 ### Step 2 : Module / Controller / Scope
 [Live Demo](http://s618867135.onlinehome.fr/AngularJS-1.x-step-by-step/step-2/frontend/src/app/)
 
-In the second step, we initiate programatically the most used concepts of AngularJS.
+In the second step, we initiate programatically some concepts of AngularJS.
 
 * Module — A module is a collection of services, directives, controllers, filters, and configuration information.
 * Controller / Controller As — A Controller is defined by a JavaScript constructor function that is used to augment the Angular Scope.
