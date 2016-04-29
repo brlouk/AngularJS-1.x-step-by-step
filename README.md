@@ -36,7 +36,7 @@ In the second step, we initiate programatically the most used concepts of Angula
 
 * Module — A module is a collection of services, directives, controllers, filters, and configuration information.
 * Controller / Controller As — A Controller is defined by a JavaScript constructor function that is used to augment the Angular Scope.
-* Scope — Scope is an object that refers to the application model
+* Scope — A Scope is an object that refers to the application model
 * Angular directives — ng-submit, ng-click, ng-repeat, select, ng-src, ng-model
 
 #### Get Started
@@ -80,4 +80,5 @@ In this step, we show how powerful is the dependency Injection in AngularJS.
 
 Dependency Injection (DI) is a software design pattern, in charge of creating components, resolving their dependencies, and providing them to other components as requested.You can use it when defining components or when providing run and config blocks for a module.
 * Value / Constant — Angular value and constant services are an ideal way to provide application a shared data without having to pollute the global namespace.
-* 
+* Factory — A factory is a function which is used to return calculated value on demand for a service or controller.
+* Service — A service is a Singleton Lazily instantiated object. You can use services to organize and share code across your app.
