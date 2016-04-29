@@ -1,7 +1,7 @@
 # AngularJS-1.x-step-by-step
 This Tutorial is designed for software developers who want to learn the basics of AngularJS in simple and easy steps. In advanced steps, we use Bower, Gulp and NodeJS to simplify developement.
 
-Each Step has its own folder so you can work on each step separately.
+Each Step has its own folder so you can work on each step separately.Take a look at the code souce for details.
 
 # Steps
 
