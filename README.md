@@ -87,3 +87,5 @@ To create objects as services or as specialized objects, the injector uses the f
 * Factory — A factory is a function which is used to return calculated value on demand for a service or controller.
 * Service — A service is a Singleton Lazily instantiated object. You can use services to organize and share code across your app.
 * Provider — A Provider is the core recipe for all the other recipe, it's the most verbose. You should use the Provider recipe only when you want to expose an API for application-wide configuration.
+
+#### Get Started
