@@ -76,6 +76,9 @@ function CustomerController() {
 }
 ```
 ### Step 3 : Dependency Injection / Configuration / Angular Services
+
+[Live Demo](http://s618867135.onlinehome.fr/AngularJS-1.x-step-by-step/step-3/frontend/src/app/)
+
 In this step, we discuss how powerful is the dependency Injection in AngularJS.
 
 Dependency Injection (DI) is a software design pattern, in charge of creating components, resolving their dependencies, and providing them to other components as requested.You can use it when defining components or when providing run and config blocks for a module.
