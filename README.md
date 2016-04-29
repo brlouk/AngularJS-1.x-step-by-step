@@ -79,3 +79,5 @@ function CustomerController() {
 In this step, we show how powerful is the dependency Injection in AngularJS.
 
 Dependency Injection (DI) is a software design pattern, in charge of creating components, resolving their dependencies, and providing them to other components as requested.You can use it when defining components or when providing run and config blocks for a module.
+* Value / Constant — Angular value and constant services are an ideal way to provide application a shared data without having to pollute the global namespace.
+* 
