@@ -81,7 +81,9 @@ In this step, we show how powerful is the dependency Injection in AngularJS.
 Dependency Injection (DI) is a software design pattern, in charge of creating components, resolving their dependencies, and providing them to other components as requested.You can use it when defining components or when providing run and config blocks for a module.
 
 In Angular, components are instantiated and wired together automatically by the injector service.
+To create objects as services or as specialized objects, the injector uses the following recipes:
 
 * Value / Constant — Angular value and constant services are an ideal way to provide application a shared data without having to pollute the global namespace.
 * Factory — A factory is a function which is used to return calculated value on demand for a service or controller.
 * Service — A service is a Singleton Lazily instantiated object. You can use services to organize and share code across your app.
+* Provider — 
