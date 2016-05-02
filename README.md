@@ -88,8 +88,11 @@ To create objects as services or as specialized objects, the injector uses the f
 
 * Value / Constant — Angular value and constant services are an ideal way to provide application a shared data without having to pollute the global namespace.
 * Factory — A factory is a function which is used to return calculated value or a service on demand for a controller.
-* Service — A service is a Singleton Lazily instantiated object. You can use services to organize and share code across your app.
+* Service — A service is a Singleton Lazily instantiated object. You can use services (or Factories) to organize and share code across your app.
 * Provider — A Provider is the core recipe for all the other recipe, it's the most verbose. You should use the Provider recipe only when you want to expose an API for application-wide configuration.
+
+Since Services are so similar to factories, use a factory instead for consistency in practice.
+
 
 #### Get Started
 * Create a JS File "index.value.js"
