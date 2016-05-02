@@ -93,8 +93,26 @@ To create objects as services or as specialized objects, the injector uses the f
 
 (Since Services are so similar to factories, It's recommended to use a factory instead for consistency in practice.)
 
-AngularJS configuration, it's suitable to configure providers. You can take a look at the example below :
+AngularJS configuration, it's suitable to configure providers and a good example to understand DI. You can take a look at the example below :
+```javascript
+(function() {
+	'use strict';
 
+	angular.module('myapp').config(config);
+
+	//USE DEPENDENCIES
+	//function name (DEP1,DEP2,...)
+	function config($logProvider, appConfig) {
+		// Enable Debug log
+		$logProvider.debugEnabled(appConfig.debug);
+	}
+
+	
+	//INJECT DEPENDENCIES : $logProvider (AngularService) and appConfig (Our Constant Json Params)
+	//function.$inject=['DEP1', 'DEP2',...]
+	config.$inject = [ '$logProvider', 'appConfig' ];
+})();
+```
 
 #### Get Started
 * Create a JS File "index.value.js"
