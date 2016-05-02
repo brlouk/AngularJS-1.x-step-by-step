@@ -92,3 +92,21 @@ To create objects as services or as specialized objects, the injector uses the f
 * Provider — A Provider is the core recipe for all the other recipe, it's the most verbose. You should use the Provider recipe only when you want to expose an API for application-wide configuration.
 
 #### Get Started
+* Create a JS File "index.value.js"
+```javascript
+angular.module('myapp').value('logParam', {
+	user : 'anonymous',
+	app : 'AngularJS-1.x-step-by-step'
+});
+```
+* Create a JS File "index.constant.js"
+```javascript
+angular.module('myapp').constant('apiConfig', {
+	name : 'whatismyip',
+	//url : "http://ip-api.com/json"
+	url : 'https://api.ipify.org?format=json'
+});
+angular.module('myapp').constant('appConfig', {
+	debug : true
+});
+```
