@@ -13,7 +13,7 @@ In this first step, we use only elementary AngularJS concepts to render a dynami
 * Auto Bootstrap — The ngApp directive designates the root element of the application.
 * Init Scope — The ngInit directive allows you to evaluate an expression in the current scope.   
 * Markup — The double curly brace notation {{ }} to bind expressions to html elements.
-* Filter Number — using {{ | }} notation to format data for display
+* Filters — using {{ | }} notation to format data for display
 
 #### Get Started
 
