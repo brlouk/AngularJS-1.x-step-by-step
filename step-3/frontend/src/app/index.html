@@ -13,7 +13,12 @@
 	
 	<div ng-controller="IPController as ip">
 		<h2>AngularJS - Service</h2>
-		{{ip.data}}
+		My GeoInfo : {{ip.data}}
+	</div>
+	
+	<div ng-controller="IPController2 as ip2">
+		<h2>AngularJS - Factory</h2>
+		Your IP : {{ip2.data}}
 	</div>
 
 	<!-- @Populate Script dependencies -->
@@ -23,6 +28,7 @@
 	<script src="index.constant.js"></script>
 	<script src="index.config.js"></script>
 	<script src="index.service.js"></script>
+	<script src="index.factory.js"></script>
 	<script src="index.controller.js"></script>
 </body>
 </html>

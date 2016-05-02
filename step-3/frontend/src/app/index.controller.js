@@ -29,5 +29,16 @@
 	}
 
 	IPController.$inject = [ 'IPService' ];
+	
+	angular.module('myapp').controller('IPController2', IPController2);
+
+	function IPController2(IPFactory) {
+		var vm = this;
+		IPFactory.getIPInfo().then(function(response){
+			vm.data=response.data.ip
+		});
+	}
+
+	IPController2.$inject = [ 'IPFactory' ];
 
 })();
