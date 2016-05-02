@@ -91,7 +91,9 @@ To create objects as services or as specialized objects, the injector uses the f
 * Service — A service is a Singleton Lazily instantiated object. You can use services (or Factories) to organize and share code across your app.
 * Provider — A Provider is the core recipe for all the other recipe, it's the most verbose. You should use the Provider recipe only when you want to expose an API for application-wide configuration.
 
-Since Services are so similar to factories, use a factory instead for consistency in practice.
+(Since Services are so similar to factories, It's recommended to use a factory instead for consistency in practice.)
+
+AngularJS configuration, it's suitable to configure providers. You can take a look at the example below :
 
 
 #### Get Started
@@ -154,6 +156,15 @@ angular.module('myapp').factory('IPFactory', IPFactory);
 	}
 	
 IPFactory.$inject=['$http','apiConfig'];
+```
+* Create a JS File "index.config.js"
+```javascript
+angular.module('myapp').config(config);
+function config($logProvider, appConfig) {
+	// Enable Debug log
+	$logProvider.debugEnabled(appConfig.debug);
+}
+config.$inject = [ '$logProvider', 'appConfig' ];
 ```
 * Define a controller as example to use factory
 ```javascript
