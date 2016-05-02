@@ -155,7 +155,7 @@ angular.module('myapp').factory('IPFactory', IPFactory);
 	
 IPFactory.$inject=['$http','apiConfig'];
 ```
-* Create a controller File to use factory
+* Define a controller as example to use factory
 ```javascript
 angular.module('myapp').controller('IPController2', IPController2);
 
