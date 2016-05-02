@@ -32,13 +32,16 @@
 	
 	angular.module('myapp').controller('IPController2', IPController2);
 
-	function IPController2(IPFactory) {
+	function IPController2(IPFactory, $log) {
 		var vm = this;
 		IPFactory.getIPInfo().then(function(response){
 			vm.data=response.data.ip
+		}).catch(function(error){
+			//error
+			$log.error("An error occured!");
 		});
 	}
 
-	IPController2.$inject = [ 'IPFactory' ];
+	IPController2.$inject = [ 'IPFactory','$log' ];
 
 })();

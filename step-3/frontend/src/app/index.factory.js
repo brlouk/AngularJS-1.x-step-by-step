@@ -3,7 +3,7 @@
 
 	angular.module('myapp').factory('IPFactory', IPFactory);
 
-	function IPFactory($http) {
+	function IPFactory($http,apiConfig) {
 
 		/*DECLARATION*/
 		
@@ -18,11 +18,11 @@
 		function getIPInfo() {
 			return $http({
 				  method: 'GET',
-				  url: 'https://api.ipify.org?format=json'
+				  url: apiConfig.url
 				});
 		}
 	}
 	
-	IPFactory.$inject=['$http'];
+	IPFactory.$inject=['$http','apiConfig'];
 
 })();
