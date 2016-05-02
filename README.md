@@ -103,10 +103,52 @@ angular.module('myapp').value('logParam', {
 ```javascript
 angular.module('myapp').constant('apiConfig', {
 	name : 'whatismyip',
-	//url : "http://ip-api.com/json"
 	url : 'https://api.ipify.org?format=json'
 });
 angular.module('myapp').constant('appConfig', {
 	debug : true
 });
+```
+* Create a JS File "index.service.js"
+```javascript
+angular.module('myapp').service('IPService', IPService);
+
+function IPService() {
+	this.getIPInfo = function() {
+		return {
+			"city" : "Suresnes",
+			"country" : "France",
+			"countryCode" : "FR",
+			"regionName" : "Ile-de-France",
+			"status" : "success",
+			"timezone" : "Europe/Paris",
+			"zip" : "92150",
+			"IP" : "127.0.0.1"
+			}
+		}
+	}
+```
+* Create a JS File "index.factory.js"
+```javascript
+angular.module('myapp').factory('IPFactory', IPFactory);
+	function IPFactory($http,apiConfig) {
+		/*DECLARATION*/
+		
+		var service = {
+			getIPInfo : getIPInfo
+		}
+
+		return service;
+
+		/*IMPLEMENTATION*/
+		
+		function getIPInfo() {
+			return $http({
+				  method: 'GET',
+				  url: apiConfig.url
+				});
+		}
+	}
+	
+IPFactory.$inject=['$http','apiConfig'];
 ```
