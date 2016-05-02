@@ -87,7 +87,7 @@ In Angular, components are instantiated and wired together automatically by the 
 To create objects as services or as specialized objects, the injector uses the following recipes at most once, which means all services are singletons:
 
 * Value / Constant — Angular value and constant services are an ideal way to provide application a shared data without having to pollute the global namespace.
-* Factory — A factory is a function which is used to return calculated value on demand for a service or controller.
+* Factory — A factory is a function which is used to return calculated value or a service on demand for a controller.
 * Service — A service is a Singleton Lazily instantiated object. You can use services to organize and share code across your app.
 * Provider — A Provider is the core recipe for all the other recipe, it's the most verbose. You should use the Provider recipe only when you want to expose an API for application-wide configuration.
 
