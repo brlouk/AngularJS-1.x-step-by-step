@@ -168,3 +168,10 @@ angular.module('myapp').controller('IPController2', IPController2);
 
 	IPController2.$inject = [ 'IPFactory','$log' ];
 ```
+
+```html
+<div ng-controller="IPController2 as ip2">
+	<h2>AngularJS - Factory</h2>
+	Your IP : {{ip2.data}}
+</div>
+```
