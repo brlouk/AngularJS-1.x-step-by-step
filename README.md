@@ -207,3 +207,37 @@ angular.module('myapp').controller('IPController2', IPController2);
 	Your IP : {{ip2.data}}
 </div>
 ```
+
+### Step 4 : Directives
+
+In this step, we'll explain you how you can create directives in your app.
+
+Directives are a set of marker on a DOM element (such as an attribute, element, comment or css class), used to extend HTML by attaching specified behavior.
+
+Angular comes with a set of these directives built-in, like ng-bind and ng-model already seen in previous steps and you can create your own directives.
+
+#### Get Started
+
+###### Template-expanding directive : Basic Directive
+
+* Create a JS File "ip.directive.js"
+```javascript
+(function() {
+	'use strict';
+	angular.module('myapp').directive('myIp', myIp);
+
+	function myIp() {
+		return {
+			template : '<h3>My IP : 127.0.0.1</h3>'
+		}
+	}
+
+})();
+```
+* HTML FILE : Angular uses camelCase normalized to match directive (myIp => my-ip )
+```html
+<my-ip></my-ip>
+```
+
+
+
