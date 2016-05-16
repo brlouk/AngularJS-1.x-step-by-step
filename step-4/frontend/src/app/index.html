@@ -1,0 +1,21 @@
+<html ng-app="myapp" ng-strict-di>
+<body>
+
+	<div>
+		<h2>Template-expanding directive : Basic Directive</h2>
+		<my-ip></my-ip>
+	</div>
+	
+	<div ng-controller='myIPController'>
+		<h2>Template-expanding directive : Controller Scope</h2>
+		<my-ip2></my-ip2>
+	</div>
+
+	<!-- @Populate Script dependencies -->
+	<script src="../../vendor_components/angular/1.5.5/angular.js"></script>
+	<script src="index.module.js"></script>
+	<script src="index.controller.js"></script>
+	<script src="../components/ip.directive.js"></script>
+	<script src="../components/ipv2/ip.directive.js"></script>
+</body>
+</html>
