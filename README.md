@@ -285,3 +285,5 @@ function myIp3() {
 		}
 	}
 ```
+###### Isolating the Scope of a Directive
+To avoid create a controller each time you want to reuse directive with a different scope, you need to use scope option in your directive to separate the scope inside from the scope outside (the scope of parent such as Controller).
