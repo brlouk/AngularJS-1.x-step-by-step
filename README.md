@@ -220,7 +220,7 @@ Angular comes with a set of these directives built-in, like ng-bind and ng-model
 
 ###### Template-expanding directive : Basic Directive
 
-* Create a JS File "ip.directive.js"
+* Create a JS File "myip.directive.js"
 ```javascript
 (function() {
 	'use strict';
@@ -238,6 +238,41 @@ Angular comes with a set of these directives built-in, like ng-bind and ng-model
 ```html
 <my-ip></my-ip>
 ```
+###### Template-expanding directive : Controller Scope
+* Create a JS File "index.controller.js"
+```javascript
+(function() {
+	'use strict';
+	angular.module('myapp').controller('myIPController',myIPController);
+	
+	function myIPController ($scope){
+		$scope.ip='169.159.2.1';
+	}
+	
+	myIPController.$inject=['$scope'];
 
+})();
+```
+* Create a JS File "myip2.directive.js"
+```javascript
+(function() {
+	'use strict';
+	angular.module('myapp').directive('myIp2', myIp2);
+
+	function myIp2() {
+		return {
+			template : '<h3>My IP : {{ip}}</h3>'
+		}
+	}
+
+})();
+```
+* HTML FILE : you just need to declare the controller for binding scope
+```html
+	<div ng-controller='myIPController'>
+		<h2>Template-expanding directive : Controller Scope</h2>
+		<my-ip2></my-ip2>
+	</div>
+```
 
 
