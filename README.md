@@ -274,5 +274,14 @@ Angular comes with a set of these directives built-in, like ng-bind and ng-model
 		<my-ip2></my-ip2>
 	</div>
 ```
-
-
+###### Options used to define directive : 
+* restrict: It is restricted to attribute and elements only by default. In order to create directives that are triggered by class name, you need to use the restrict option, A : Attribute, E : Element, C: Class, M : Comment. Theses restrictions can all be combined as needed.
+Example :
+```html
+function myIp3() {
+		return {
+			restrict : 'AEC', // matches either attribute or element or class name
+			template : '<h3>My IP : {{ip}}</h3>'
+		}
+	}
+```
