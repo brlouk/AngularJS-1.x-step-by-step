@@ -315,7 +315,7 @@ Getting started
 				controllerName : '@', // bind a local scope property to the
 				// value of DOM attribute.
 				timestamp : '<', // one-way (one-directional) binding
-				hide : '&'
+				hide : '&' //Expression, function
 			},
 			template : '<h3>Actor from "{{controllerName}} created @ {{timestamp | date:"MM/dd/yyyy h:mma"}}"'
 					+ ' : {{info.lastname}}, {{info.firstname}} '
