@@ -349,7 +349,7 @@ angular.module('myapp').controller('myActorController', myActorController);
 	}
 
 ```
-* HTML FILE : you can see that we can reuse Directive inside the same controller with different scope property.
+* HTML FILE : you can see that we can reuse Directive inside the same controller with different scope properties.
 ```html
 <div ng-controller='myActorController as actor'>
 	<h2>Isolating the Scope of a Directive</h2>
