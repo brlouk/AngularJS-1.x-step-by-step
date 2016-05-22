@@ -291,10 +291,12 @@ To avoid create a new controller each time you want to reuse directive with a di
 The scope property can be :
 * falsy : The directive will use its parent's scope.
 * true: Only one scope is create for multi-directives.
-* Object {...} :A new "isolate" scope is created for the directive. To define how the property is bound to the parent scope, you can use theses wildcards : 
-* * @ : bind a local scope property to the value of DOM attribute.
-* * = : bidirectional binding between a local and parent scope property
-* * < : one-way (one-directional) binding between a local and parent scope property (parent -> local )
+* Object {...} :A new "isolate" scope is created for the directive.
+
+To define how the property is bound to the parent scope, you can use theses wildcards : 
+*  @ : bind a local scope property to the value of DOM attribute.
+*  = : bidirectional binding between a local and parent scope property
+*  < : one-way (one-directional) binding between a local and parent scope property (parent -> local )
 
 * Create a JS File "myactor.directive.js"
 ```javascript
