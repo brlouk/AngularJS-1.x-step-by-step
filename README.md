@@ -286,7 +286,7 @@ function myIp3() {
 	}
 ```
 ###### Isolating the Scope of a Directive
-To avoid create a controller each time you want to reuse directive with a different scope, you need to use scope option in your directive to separate the scope inside from the scope outside (the scope of parent such as Controller).
+To avoid create a new controller each time you want to reuse directive with a different scope, you need to use scope option in your directive to separate the scope inside from the scope outside (the scope of parent such as Controller). This is useful when creating reusable components, which should not accidentally read or modify data in the parent scope.
 * Create a JS File "myactor.directive.js"
 ```javascript
 (function() {
@@ -305,7 +305,7 @@ To avoid create a controller each time you want to reuse directive with a differ
 
 })();
 ```
-* Controller : A simple Controller As wich defines two scope properties : brucewayne, liamneeson.
+* Controller : A simple Controller As which defines two scope properties : brucewayne, liamneeson.
 ```javascript
 	angular.module('myapp').controller('myActorController',myActorController);
 	
@@ -315,7 +315,7 @@ To avoid create a controller each time you want to reuse directive with a differ
 		vm.liamneeson={firstname : 'Liam', lastname: 'Neeson'};
 	}
 ```
-* HTML FILE : you can see that we can reuse Directive in the same controller with different scope property.
+* HTML FILE : you can see that we can reuse Directive inside the same controller with different scope property.
 ```html
 	<div ng-controller='myActorController as actor'>
 		<my-actor info="actor.brucewayne"></my-actor>
