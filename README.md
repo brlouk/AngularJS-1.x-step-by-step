@@ -298,6 +298,8 @@ To define how the property is bound to the parent scope, you can use theses wild
 *  = : bidirectional binding between a local and parent scope property
 *  < : one-way (one-directional) binding between a local and parent scope property (parent -> local )
 
+Getting started
+
 * Create a JS File "myactor.directive.js"
 ```javascript
 (function() {
