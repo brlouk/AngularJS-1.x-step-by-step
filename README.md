@@ -308,9 +308,11 @@ To define how the property is bound to the parent scope, you can use theses wild
 		return {
 			restrict : 'E', // Only Match Element
 			scope : {
-				info: '=' //Same as info: '=info'
+				info : '=',// Same as info: '=info, Bidirectional binding,
+				controllerName : '@', // bind a local scope property to the value of DOM attribute.
+				timestamp : '<' //one-way (one-directional) binding
 			},
-			template : '<h3>Actor : {{info.lastname}}, {{info.firstname}}</h3>'
+			template : '<h3>Actor from "{{controllerName}} created @ {{timestamp | date:"MM/dd/yyyy h:mma"}}" : {{info.lastname}}, {{info.firstname}}</h3>'
 		}
 	}
 
@@ -318,18 +320,28 @@ To define how the property is bound to the parent scope, you can use theses wild
 ```
 * Controller : A simple Controller As which defines two scope properties : brucewayne, liamneeson.
 ```javascript
-	angular.module('myapp').controller('myActorController',myActorController);
-	
-	function myActorController (){
-		var vm=this;
-		vm.brucewayne={firstname : 'Bruce', lastname: 'Wayne'};
-		vm.liamneeson={firstname : 'Liam', lastname: 'Neeson'};
+angular.module('myapp').controller('myActorController', myActorController);
+
+	function myActorController() {
+		var vm = this;
+		vm.brucewayne = {
+			firstname : 'Bruce',
+			lastname : 'Wayne'
+		};
+		vm.liamneeson = {
+			firstname : 'Liam',
+			lastname : 'Neeson'
+		};
+		vm.ctrlName = 'myActorController';
+		vm.timestamp = Date.now();
 	}
+
 ```
 * HTML FILE : you can see that we can reuse Directive inside the same controller with different scope property.
 ```html
 	<div ng-controller='myActorController as actor'>
-		<my-actor info="actor.brucewayne"></my-actor>
-		<my-actor info="actor.liamneeson"></my-actor>
+		<my-actor info="actor.brucewayne" controller-name="{{actor.ctrlName}}" timestamp="actor.timestamp"></my-actor>
+		<my-actor info="actor.liamneeson" controller-name="{{actor.ctrlName}}"
+			timestamp="actor.timestamp"></my-actor>
 	</div>
 ```
