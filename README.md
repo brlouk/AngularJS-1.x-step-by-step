@@ -287,6 +287,15 @@ function myIp3() {
 ```
 ###### Isolating the Scope of a Directive
 To avoid create a new controller each time you want to reuse directive with a different scope, you need to use scope option in your directive to separate the scope inside from the scope outside (the scope of parent such as Controller). This is useful when creating reusable components, which should not accidentally read or modify data in the parent scope.
+
+The scope property can be :
+* falsy : The directive will use its parent's scope.
+* true: Only one scope is create for multi-directives.
+* Object {...} :A new "isolate" scope is created for the directive. To define how the property is bound to the parent scope, you can use theses wildcards : 
+* * @ : bind a local scope property to the value of DOM attribute.
+* * = : bidirectional binding between a local and parent scope property
+* * < : one-way (one-directional) binding between a local and parent scope property (parent -> local )
+
 * Create a JS File "myactor.directive.js"
 ```javascript
 (function() {
