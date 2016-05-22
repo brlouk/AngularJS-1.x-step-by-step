@@ -297,6 +297,7 @@ To define how the property is bound to the parent scope, you can use theses wild
 *  @ : bind a local scope property to the value of DOM attribute.
 *  = : bidirectional binding between a local and parent scope property
 *  < : one-way (one-directional) binding between a local and parent scope property (parent -> local )
+*  & :  provides a way to execute an expression in the context of the parent scope.
 
 Getting started
 
@@ -311,16 +312,20 @@ Getting started
 			restrict : 'E', // Only Match Element
 			scope : {
 				info : '=',// Same as info: '=info, Bidirectional binding,
-				controllerName : '@', // bind a local scope property to the value of DOM attribute.
-				timestamp : '<' //one-way (one-directional) binding
+				controllerName : '@', // bind a local scope property to the
+				// value of DOM attribute.
+				timestamp : '<', // one-way (one-directional) binding
+				hide : '&'
 			},
-			template : '<h3>Actor from "{{controllerName}} created @ {{timestamp | date:"MM/dd/yyyy h:mma"}}" : {{info.lastname}}, {{info.firstname}}</h3>'
+			template : '<h3>Actor from "{{controllerName}} created @ {{timestamp | date:"MM/dd/yyyy h:mma"}}"'
+					+ ' : {{info.lastname}}, {{info.firstname}} '
+					+ '<a href ng-click="hide()">&times;</a></h3>'
 		}
 	}
 
 })();
 ```
-* Controller : A simple Controller As which defines two scope properties : brucewayne, liamneeson.
+* Controller : A Controller As which defines some scope properties : brucewayne, liamneeson.
 ```javascript
 angular.module('myapp').controller('myActorController', myActorController);
 
@@ -328,22 +333,31 @@ angular.module('myapp').controller('myActorController', myActorController);
 		var vm = this;
 		vm.brucewayne = {
 			firstname : 'Bruce',
-			lastname : 'Wayne'
+			lastname : 'Wayne',
+			show : true
 		};
 		vm.liamneeson = {
 			firstname : 'Liam',
-			lastname : 'Neeson'
+			lastname : 'Neeson',
+			show : true
 		};
 		vm.ctrlName = 'myActorController';
 		vm.timestamp = Date.now();
+		vm.hide = function(actor) {
+			actor.show = false;
+		}
 	}
 
 ```
 * HTML FILE : you can see that we can reuse Directive inside the same controller with different scope property.
 ```html
-	<div ng-controller='myActorController as actor'>
-		<my-actor info="actor.brucewayne" controller-name="{{actor.ctrlName}}" timestamp="actor.timestamp"></my-actor>
-		<my-actor info="actor.liamneeson" controller-name="{{actor.ctrlName}}"
-			timestamp="actor.timestamp"></my-actor>
-	</div>
+<div ng-controller='myActorController as actor'>
+	<h2>Isolating the Scope of a Directive</h2>
+	<my-actor info="actor.brucewayne" controller-name="{{actor.ctrlName}}"
+		timestamp="actor.timestamp" hide="actor.hide(actor.brucewayne)"
+		ng-show="actor.brucewayne.show"></my-actor>
+	<my-actor info="actor.liamneeson" controller-name="{{actor.ctrlName}}"
+		timestamp="actor.timestamp" hide="actor.hide(actor.liamneeson)"
+		ng-show="actor.liamneeson.show"></my-actor>
+</div>
 ```
