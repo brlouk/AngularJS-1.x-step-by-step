@@ -361,3 +361,9 @@ angular.module('myapp').controller('myActorController', myActorController);
 		ng-show="actor.liamneeson.show"></my-actor>
 </div>
 ```
+
+###### Creating a Directive that Manipulates the DOM : 
+* Understand Angular HTML Compiler
+
+
+* link, prelink, postlink Function
