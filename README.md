@@ -363,7 +363,37 @@ angular.module('myapp').controller('myActorController', myActorController);
 ```
 
 ###### Creating a Directive that Manipulates the DOM : 
-* Understand Angular HTML Compiler
++ Understand Angular HTML Compiler : the compilation process in Angular happens in two phases.
+  - Compile: traverse the DOM and collect all of the directives. The result is a composed linking function.
+  - Link: combine the directives with a scope and produce a live view. Any changes in the scope model are reflected in the view, and any user interactions with the view are reflected in the scope model. This makes the scope model the single source of truth.
++ How directives are compiled : the 4 steps
+  - Step 1: parse HTML into DOM element
+  - Step 2: compile the template
+  - Step 3: link the compiled template with the scope.
+  - Step 4: Append to DOM (optional)
+```javascript
+var $compile = ...; // injected into your code
+var scope = ...;
+var parent = ...; // DOM element where the compiled template can be appended
 
+var html = '<div ng-bind="exp"></div>';
 
-* link, prelink, postlink Function
+// Step 1: parse HTML into DOM element
+var template = angular.element(html);
+
+// Step 2: compile the template
+var linkFn = $compile(template);
+
+// Step 3: link the compiled template with the scope.
+var element = linkFn(scope);
+
+// Step 4: Append to DOM (optional)
+parent.appendChild(element);
+```
++ link option : Directives that want to modify the DOM typically use the link option to register DOM listeners as well as update the DOM, function link(scope, element, attrs, controller, transcludeFn) { ... } :
+  - scope is an Angular scope object.
+  - element is the jqLite-wrapped element that this directive matches.
+  - attrs is a hash object with key-value pairs of normalized attribute names and their corresponding attribute values.
+  - controller is the directive's required controller instance(s) or its own controller (if any). The exact value depends on the directive's require property.
+  - transcludeFn is a transclude linking function pre-bound to the correct transclusion scope (See later in next step).
+
