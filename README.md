@@ -397,7 +397,47 @@ parent.appendChild(element);
   - controller is the directive's required controller instance(s) or its own controller (if any). The exact value depends on the directive's require property.
   - transcludeFn is a transclude linking function pre-bound to the correct transclusion scope (See later in next step).
 
-Getting started : TODO
+Getting started :
+* Create a JS File "mydata.directive.js"
+```javascript
+(function() {
+	'use strict';
+	angular.module('myapp').directive('myData',myData);
+	
+	function myData (){
+		return {
+			
+			link : function link (scope,element,attrs){
+				//get scope name
+				var scopeName= attrs.myData;
+				
+				//update element content
+				function updateContent(value){
+					element.text(value);
+					element.css("background-color", "green");
+				}
+				
+				//Watch for change on scope
+				scope.$watch(scopeName,function(value){
+					updateContent(value);
+				});
+				
+			}
+		}
+		
+	}
+
+})();
+```
+* Create a new controller "myDataController" with scope property "content"
+```javascript
+	angular.module('myapp').controller('myDataController',myDataController);
+	
+	function myDataController (){
+		var vm=this;
+		vm.content="";
+	}
+```
 
 ###### Creating a Directive that Wraps Other Elements : Transclusion
 TODO
