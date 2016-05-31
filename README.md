@@ -210,6 +210,9 @@ angular.module('myapp').controller('IPController2', IPController2);
 
 ### Step 4 : Directives
 
+[Live Demo](http://s618867135.onlinehome.fr/AngularJS-1.x-step-by-step/step-4/frontend/src/app/)
+
+
 In this step, we'll explain you how you can create directives in your app.
 
 Directives are a set of marker on a DOM element (such as an attribute, element, comment or css class), used to extend HTML by attaching specified behavior.
