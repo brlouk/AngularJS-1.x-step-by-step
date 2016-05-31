@@ -397,7 +397,7 @@ parent.appendChild(element);
   - controller is the directive's required controller instance(s) or its own controller (if any). The exact value depends on the directive's require property.
   - transcludeFn is a transclude linking function pre-bound to the correct transclusion scope (See later in next step).
 
-Getting started :
+Getting started
 * Create a JS File "mydata.directive.js"
 ```javascript
 (function() {
@@ -408,7 +408,7 @@ Getting started :
 		return {
 			
 			link : function link (scope,element,attrs){
-				//get scope name
+				//get a scope name
 				var scopeName= attrs.myData;
 				
 				//update element content
@@ -433,7 +433,7 @@ Getting started :
 ```html
 	<div ng-controller="myDataController as data">
 		<h2>Creating a Directive that Manipulates the DOM</h2>
-		<input type="text" ng-model="data.content" placeholder="Saisir Text..."/>
+		<input type="text" ng-model="data.content" placeholder="..."/>
 		<span my-data="data.content"></span>
 	</div>
 ```
