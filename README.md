@@ -429,6 +429,14 @@ Getting started :
 
 })();
 ```
+* Use a directive "my-data" on html span
+```html
+	<div ng-controller="myDataController as data">
+		<h2>Creating a Directive that Manipulates the DOM</h2>
+		<input type="text" ng-model="data.content" placeholder="Saisir Text..."/>
+		<span my-data="data.content"></span>
+	</div>
+```
 * Create a new controller "myDataController" with scope property "content"
 ```javascript
 	angular.module('myapp').controller('myDataController',myDataController);
