@@ -5,17 +5,34 @@
 		<h2>Template-expanding directive : Basic Directive</h2>
 		<my-ip></my-ip>
 	</div>
-	
-	<div ng-controller='myIPController'>
+
+	<div ng-controller="myIPController">
 		<h2>Template-expanding directive : Controller Scope</h2>
 		<my-ip2></my-ip2>
 	</div>
 
+	<div ng-controller="myActorController as actor">
+		<h2>Isolating the Scope of a Directive</h2>
+		<my-actor info="actor.brucewayne" controller-name="{{actor.ctrlName}}"
+			timestamp="actor.timestamp" hide="actor.hide(actor.brucewayne)"
+			ng-show="actor.brucewayne.show"></my-actor>
+		<my-actor info="actor.liamneeson" controller-name="{{actor.ctrlName}}"
+			timestamp="actor.timestamp" hide="actor.hide(actor.liamneeson)"
+			ng-show="actor.liamneeson.show"></my-actor>
+	</div>
+	<div ng-controller="myDataController as data">
+		<h2>Creating a Directive that Manipulates the DOM</h2>
+		<input type="text" ng-model="data.content" placeholder="Saisir Text..."/>
+		<span my-data="data.content"></span>
+	</div>
+	
 	<!-- @Populate Script dependencies -->
 	<script src="../../vendor_components/angular/1.5.5/angular.js"></script>
 	<script src="index.module.js"></script>
 	<script src="index.controller.js"></script>
-	<script src="../components/ip.directive.js"></script>
-	<script src="../components/ipv2/ip.directive.js"></script>
+	<script src="../components/myip.directive.js"></script>
+	<script src="../components/myip2.directive.js"></script>
+	<script src="../components/myactor.directive.js"></script>
+	<script src="../components/mydata.directive.js"></script>
 </body>
 </html>
